@@ -1,0 +1,200 @@
+:root {
+  --background-color: rgb(10, 10, 10);
+  --heading-color: white;
+  --text-color: rgb(160, 160, 160);
+  --text-color-light: rgb(210, 210, 210);
+  --primary-accent: #4776e6;
+  --primary-accent-faded: rgba(71, 119, 230, 0.6);
+  --primary-accent-dark-faded: rgba(71, 119, 230, 0.048);
+  --secondary-accent: #8e54e9;
+  --border-color: #475569;
+  --profile-pic-border: 0.3rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: calc(18px + 0.4vw);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  padding: 8vw;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 b {
+  color: var(--heading-color);
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-weight: 300;
+}
+
+main > header {
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#profile {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+#profile-pic {
+  position: relative;
+  width: clamp(90px, 5rem, 20vw);
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  background-image: url("./img/profile-pic.jpeg");
+  background-position: -0.3em center;
+  background-size: calc(100% + 0.3em);
+  background-clip: padding-box;
+  border: var(--profile-pic-border) solid transparent;
+}
+
+#profile-pic::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: calc(-1 * var(--profile-pic-border));
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    to top right,
+    var(--primary-accent),
+    var(--secondary-accent)
+  );
+}
+
+.icon {
+  width: 1rem;
+}
+
+#introduction {
+  font-size: 0.875rem;
+  line-height: 1.4rem;
+  max-width: 30ch;
+}
+
+.swdev {
+  position: relative;
+  color: var(--heading-color);
+  white-space: nowrap;
+}
+
+.swdev::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 120%;
+  height: 0.1rem;
+  background: linear-gradient(
+    to right,
+    var(--primary-accent-dark-faded),
+    var(--primary-accent),
+    var(--primary-accent-dark-faded)
+  );
+}
+
+#socials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socials-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+section {
+  margin-top: 2rem;
+}
+
+section h2 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+  color: var(--primary-accent);
+}
+
+article {
+  margin-top: 1rem;
+}
+
+.project {
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  border-radius: 0.25rem;
+  display: flex;
+  align-items: stretch;
+  align-content: stretch;
+  background: linear-gradient(
+    to top right,
+    var(--primary-accent),
+    var(--secondary-accent)
+  );
+}
+
+.project > * {
+  flex-grow: 1;
+}
+
+.project header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.project header p {
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+  color: var(--text-color-light);
+}
+
+.project h3 {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+.project-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  min-width: 3rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--text-color);
+}
