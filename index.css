@@ -120,6 +120,7 @@ main > header {
 #socials {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .socials-link {
@@ -129,7 +130,7 @@ main > header {
   text-decoration: none;
   color: var(--text-color);
   font-weight: 600;
-  font-size: 0.875rem;
+  font-size: 0.8rem;
 }
 
 section {
@@ -182,7 +183,7 @@ article {
 }
 
 .project h3 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.5rem;
 }
 
